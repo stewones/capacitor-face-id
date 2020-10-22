@@ -44,6 +44,7 @@ public class FaceId: CAPPlugin {
         authContext.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason ) { success, error in
             if success {
                 DispatchQueue.main.async {
+                    authContext.invalidate()
                     call.success()
                 }
             } else {
