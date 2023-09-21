@@ -27,6 +27,10 @@ public class FaceId: CAPPlugin {
                 call.success([
                     "value": "FaceId"
                 ])
+            @unknown default:
+                call.success([
+                    "value": "None"
+                ])
             }
         } else {
             call.success([
